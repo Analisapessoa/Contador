@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Contador;
 
 @interface SecondViewController : UIViewController
+
+{
+    Contador *contador;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *totalBoys;
 @property (weak, nonatomic) IBOutlet UILabel *totalGirls;
 @property (weak, nonatomic) IBOutlet UILabel *total;
+
 - (IBAction)click:(id)sender;
 
 @end

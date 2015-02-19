@@ -11,12 +11,26 @@
 
 //Teste da Ana
 
-@implementation Contador {
+@implementation Contador
+{
     int boy;
     int girl;
+    Contador *contGlobal;
 }
 
--(id)init {
++ (Contador *)contGlobal
+{
+    static Contador *contGlobal = nil;
+    
+    if (!contGlobal)
+    {
+        contGlobal = [[Contador alloc]init];
+    }
+    return contGlobal;
+}
+
+-(id)init
+{
     self = [super init];
     if (self) {
         boy = 0;
@@ -25,19 +39,29 @@
     return self;
 }
 
-- (void)maisUmCueca {
+- (void)maisUmCueca
+{
     boy = boy + 1;
 }
-- (void)maisUmaGata {
+
+- (void)maisUmaGata
+{
     girl++;
 }
 
--(int)getBoys {
+-(int)getBoys
+{
     return boy;
 }
 
--(int)getGirls {
+-(int)getGirls
+{
     return girl;
+}
+
+-(int)getTotal
+{
+    return boy + girl;
 }
 
 

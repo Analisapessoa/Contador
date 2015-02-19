@@ -17,13 +17,16 @@
 @implementation ContaPessoasTests
 
 
-- (void)testContaMeninos {
+- (void)testContaMeninos
+{
     Contador *c = [[Contador alloc] init];
     [c maisUmCueca];
     XCTAssert(([c getBoys] == 1), @"Pass");
+    XCTAssert(([c getGirls] == 0), @"Pass");
 }
 
-- (void)testContaMeninas {
+- (void)testContaMeninas
+{
     Contador *c = [[Contador alloc] init];
     [c maisUmaGata];
     XCTAssert(([c getGirls] == 1), @"Pass");

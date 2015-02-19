@@ -8,32 +8,36 @@
 
 #import "FirstViewController.h"
 #import "Contador.h"
+#import "SecondViewController.h"
 
 @interface FirstViewController ()
 
 @end
 
-@implementation FirstViewController {
-    Contador *contador;
-}
+@implementation FirstViewController
 
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    contador = [[Contador alloc] init];
+    contador = [Contador contGlobal];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)clickBoy:(id)sender {
+- (IBAction)clickBoy:(id)sender
+{
     [contador maisUmCueca];
     NSLog(@"Meninos - %i",[contador getBoys]);
 }
 
-- (IBAction)clickGirl:(id)sender {
+- (IBAction)clickGirl:(id)sender
+{
     [contador maisUmaGata];
     NSLog(@"Meninas - %i",[contador getGirls]);
 }
