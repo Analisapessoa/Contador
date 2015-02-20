@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Contador.h"
 
+
 //Teste da Ana
 
 @implementation Contador
@@ -42,11 +43,13 @@
 - (void)maisUmCueca
 {
     boy = boy + 1;
+    [_mostrar atualiza];
 }
 
 - (void)maisUmaGata
 {
     girl++;
+    [_mostrar atualiza];
 }
 
 -(int)getBoys

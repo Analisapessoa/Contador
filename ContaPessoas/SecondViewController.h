@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contador.h"
 @class Contador;
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <Mostrador>
 
 {
     Contador *contador;

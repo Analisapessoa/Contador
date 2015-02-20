@@ -19,6 +19,8 @@
 {
     [super viewDidLoad];
     contador = [Contador contGlobal];
+    contador.mostrar = self;            //ele chame ele mesmo
+    [self atualiza];                    // ele faz ele mesmo
 }
 
 
@@ -30,6 +32,14 @@
 }
 
 - (IBAction)click:(id)sender
+{
+    _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
+    _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];
+    _total.text = [NSString stringWithFormat:@"%d", [contador getTotal ]];
+}
+
+
+- (void)atualiza
 {
     _totalBoys.text = [NSString stringWithFormat: @"%d", [contador getBoys]];
     _totalGirls.text = [NSString stringWithFormat: @"%d", [contador getGirls]];

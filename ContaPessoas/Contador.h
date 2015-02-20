@@ -6,7 +6,18 @@
 //  Copyright (c) 2015 Vinicius Miana. All rights reserved.
 //
 
+@protocol Mostrador <NSObject>
+@required
+
+-(void)atualiza; //para que precisa disso??? Não entendi...
+
+@end
+
+
 @interface Contador : NSObject
+
+
+@property (nonatomic,weak)id mostrar;
 
 + (Contador *)contGlobal;
 
